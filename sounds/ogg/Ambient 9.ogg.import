@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dtudy363m3hk8"
+path="res://.godot/imported/Ambient 9.ogg-62a374d19757ab2eb9247f4fb9967d0f.oggvorbisstr"
+
+[deps]
+
+source_file="res://sounds/ogg/Ambient 9.ogg"
+dest_files=["res://.godot/imported/Ambient 9.ogg-62a374d19757ab2eb9247f4fb9967d0f.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

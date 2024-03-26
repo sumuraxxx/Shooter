@@ -1,0 +1,170 @@
+[gd_scene load_steps=15 format=3 uid="uid://c6kuwg2p1s0lm"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_7pcpr"]
+[ext_resource type="Texture2D" uid="uid://lqmg8wjhq7qm" path="res://sprites/assets/Girl-Sheet.png" id="2_yl5g4"]
+[ext_resource type="PackedScene" uid="uid://cmdiu0mdkw4id" path="res://scenes/bow.tscn" id="3_cvfm3"]
+[ext_resource type="AudioStream" uid="uid://c313x61xks0sn" path="res://sounds/FreeSFX/GameSFX/FootStep/Retro FootStep Grass 01.wav" id="4_dqtj8"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ovf1e"]
+radius = 6.0
+height = 20.0
+
+[sub_resource type="Animation" id="Animation_lfrjb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_kimdh"]
+resource_name = "idle"
+length = 0.50001
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(3, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_csjrp"]
+resource_name = "move_down"
+length = 0.40001
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(16, 0), Vector2i(17, 0), Vector2i(18, 0), Vector2i(19, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_shac2"]
+resource_name = "move_left"
+length = 0.40001
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(4, 0), Vector2i(5, 0), Vector2i(6, 0), Vector2i(7, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_y7jdv"]
+resource_name = "move_right"
+length = 0.40001
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(8, 0), Vector2i(9, 0), Vector2i(10, 0), Vector2i(11, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_fyhwt"]
+resource_name = "move_up"
+length = 0.40001
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(12, 0), Vector2i(13, 0), Vector2i(14, 0), Vector2i(15, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_akien"]
+_data = {
+"RESET": SubResource("Animation_lfrjb"),
+"idle": SubResource("Animation_kimdh"),
+"move_down": SubResource("Animation_csjrp"),
+"move_left": SubResource("Animation_shac2"),
+"move_right": SubResource("Animation_y7jdv"),
+"move_up": SubResource("Animation_fyhwt")
+}
+
+[sub_resource type="Curve" id="Curve_gnopa"]
+_data = [Vector2(0.072, 1), 0.0, 0.0, 0, 0, Vector2(0.876, 0.465604), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_1w3li"]
+colors = PackedColorArray(0.118045, 0, 0.779389, 1, 7.70092e-07, 0.803866, 0.806347, 1)
+
+[node name="Player" type="CharacterBody2D"]
+z_index = 1
+y_sort_enabled = true
+script = ExtResource("1_7pcpr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_yl5g4")
+hframes = 44
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("CapsuleShape2D_ovf1e")
+
+[node name="Bow" parent="." instance=ExtResource("3_cvfm3")]
+rotation = -0.015708
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_akien")
+}
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 70
+one_shot = true
+explosiveness = 0.44
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_max = 50.0
+scale_amount_min = 2.0
+scale_amount_max = 3.0
+scale_amount_curve = SubResource("Curve_gnopa")
+color_ramp = SubResource("Gradient_1w3li")
+
+[node name="Walking" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_dqtj8")
+volume_db = -20.0
+bus = &"Sounds"
+
+[node name="Timer" type="Timer" parent="Walking"]
+wait_time = 0.4
+one_shot = true

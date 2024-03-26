@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ccwgsalnw18fr"
+path="res://.godot/imported/Retro Electronic Burst StereoUP 04.wav-e63f638c457048df1d63680b15022d62.sample"
+
+[deps]
+
+source_file="res://sounds/FreeSFX/GameSFX/Electronic Burst/Retro Electronic Burst StereoUP 04.wav"
+dest_files=["res://.godot/imported/Retro Electronic Burst StereoUP 04.wav-e63f638c457048df1d63680b15022d62.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

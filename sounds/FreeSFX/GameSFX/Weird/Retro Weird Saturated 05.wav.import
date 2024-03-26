@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cgx4p3v7orydb"
+path="res://.godot/imported/Retro Weird Saturated 05.wav-32ab800d3f25781c9c1e0af245c55a4d.sample"
+
+[deps]
+
+source_file="res://sounds/FreeSFX/GameSFX/Weird/Retro Weird Saturated 05.wav"
+dest_files=["res://.godot/imported/Retro Weird Saturated 05.wav-32ab800d3f25781c9c1e0af245c55a4d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

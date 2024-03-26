@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://dkrmx5qtb6l2j"]
+
+[ext_resource type="Texture2D" uid="uid://cwwyg6yrikx3s" path="res://sprites/healthbarUnder.png" id="1_4ajc2"]
+[ext_resource type="Script" path="res://scripts/main_ui.gd" id="1_pqbxv"]
+[ext_resource type="Texture2D" uid="uid://dajey0rnm3rew" path="res://sprites/healthbarProgress.png" id="2_dkt86"]
+[ext_resource type="Texture2D" uid="uid://b6oe6nabhsrcg" path="res://sprites/healthbarProgress2.png" id="4_vwrvg"]
+
+[node name="MainUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pqbxv")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+grow_horizontal = 0
+theme_override_constants/separation = 1
+
+[node name="PlayerHealthBar" type="TextureProgressBar" parent="VBoxContainer"]
+layout_mode = 2
+texture_under = ExtResource("1_4ajc2")
+texture_progress = ExtResource("2_dkt86")
+
+[node name="PlayerManaBar" type="TextureProgressBar" parent="VBoxContainer"]
+layout_mode = 2
+texture_under = ExtResource("1_4ajc2")
+texture_progress = ExtResource("4_vwrvg")

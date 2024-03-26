@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cwqps4pmn22ss"
+path="res://.godot/imported/Ambient 8.ogg-a52e8b35b73973f0a8b9a6e801a1e71e.oggvorbisstr"
+
+[deps]
+
+source_file="res://sounds/ogg/Ambient 8.ogg"
+dest_files=["res://.godot/imported/Ambient 8.ogg-a52e8b35b73973f0a8b9a6e801a1e71e.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

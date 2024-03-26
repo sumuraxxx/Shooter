@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://b61m2bpuhukt2"]
+
+[ext_resource type="Texture2D" uid="uid://bpcc48drlywx" path="res://sprites/assets/angel.png" id="1_s7f34"]
+
+[node name="Angel" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_s7f34")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-8, -30, 0, -34, 7, -33, 12, -22, 13, -1, 16, 8, 18, 16, 16, 31, -3, 31, -17, 27, -17, 18, -13, 13, -14, 6, -12, -5)

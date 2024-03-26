@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmdiu0mdkw4id"]
+
+[ext_resource type="Texture2D" uid="uid://wup01bj3wuwc" path="res://sprites/assets/Bow.png" id="1_fwbtf"]
+[ext_resource type="Script" path="res://scripts/bow.gd" id="1_j54ei"]
+[ext_resource type="AudioStream" uid="uid://cvbhvuihlhi23" path="res://sounds/FreeSFX/GameSFX/Impact/Retro Impact LoFi 09.wav" id="3_pc2fs"]
+
+[node name="Bow" type="Node2D"]
+script = ExtResource("1_j54ei")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_fwbtf")
+hframes = 6
+
+[node name="Muzzle" type="Marker2D" parent="."]
+position = Vector2(0, 13)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_pc2fs")
+volume_db = -20.0

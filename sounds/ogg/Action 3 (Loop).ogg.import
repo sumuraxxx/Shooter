@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bknusuhgxignc"
+path="res://.godot/imported/Action 3 (Loop).ogg-54e941dc22846cf14358afd9983abecf.oggvorbisstr"
+
+[deps]
+
+source_file="res://sounds/ogg/Action 3 (Loop).ogg"
+dest_files=["res://.godot/imported/Action 3 (Loop).ogg-54e941dc22846cf14358afd9983abecf.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

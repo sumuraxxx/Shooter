@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://dhoqkkaw1ci5"]
+
+[ext_resource type="Script" path="res://scripts/arrow.gd" id="1_me8rm"]
+[ext_resource type="Texture2D" uid="uid://cwjbkakclc27b" path="res://sprites/assets/Arrow.png" id="1_yvc5u"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pmm7x"]
+radius = 1.0
+height = 10.0
+
+[sub_resource type="Curve" id="Curve_p8650"]
+_data = [Vector2(0.052, 1), 0.0, 0.0, 0, 0, Vector2(0.872, 0.47651), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_xe3w4"]
+colors = PackedColorArray(0.934642, 0.953036, 0.986182, 1, 0.737193, 0.737193, 0.737193, 1)
+
+[node name="Arrow" type="Area2D"]
+script = ExtResource("1_me8rm")
+speed = 300.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+shape = SubResource("CapsuleShape2D_pmm7x")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_yvc5u")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(0, 7)
+emitting = false
+amount = 25
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 25.0
+initial_velocity_max = 50.0
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_p8650")
+color_ramp = SubResource("Gradient_xe3w4")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
